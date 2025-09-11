@@ -1,0 +1,51 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    td{
+        padding:10px;
+        border-right:1px solid grey;
+    }
+    tr{
+        border-bottom:1px solid grey;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Course</td>
+        <td>Fees</td>
+    </tr>
+
+    <tbody>
+            @foreach (var stu in Model)
+            {
+                <tr>
+                    <td>@stu.Id</td>
+                    <td>@stu.Name</td>
+                    <td>@stu.Email</td>
+                    <td>@stu.Course</td>
+                    <td>@stu.Fee</td>
+                    <td>
+                        <a href="Home/Edit/@stu.Id">Edit</a>
+                        <a href="Home/Detail/@stu.Id">Detail</a>
+                        <a href="Home/Delete/@stu.Id">Delete</a>
+                    </td>
+                </tr>
+
+            }
+    </tbody>
+
+</table>
+
+
+
+
+</div>
